@@ -10,31 +10,23 @@ const ddb = new AWS.DynamoDB.DocumentClient();
 
 const fleet = [
 	{
-		Name: 'Habib 1',
-		Color: 'White',
-		Gender: 'Male',
-	},
-	{
-		Name: 'Habib 2',
-		Color: 'Yellow',
-		Gender: 'Male',
-	},
-	{
-		Name: 'Habib 3',
+		Name: '<your name> 1',
 		Color: 'Green',
 		Gender: 'Male',
 	},
 	{
-		Name: 'Shadowfax',
-		Color: 'Red',
+		Name: '<your name> 2',
+		Color: 'White',
 		Gender: 'Male',
 	},
 	{
-		Name: 'Rocinante',
-		Color: 'Pink',
+		Name: '<your name> 3',
+		Color: 'Yellow',
 		Gender: 'Female',
 	},
+	// ... (remaining unicorns)
 ];
+
 
 exports.handler = (event, context, callback) => {
 	if (!event.requestContext.authorizer) {
