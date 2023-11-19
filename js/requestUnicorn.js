@@ -99,16 +99,15 @@ function findUnicorn(pickupLocation) {
 }
 
 function recordRide(rideId, username, unicorn) {
-	return ddb.put({
-		TableName: 'Rides',
-		Item: {
-			RideId: rideId,
-			User: username,
-			Unicorn: unicorn,
-			UnicornName: unicorn.Name,
-			RequestTime: new Date().toISOString(),
-		},
-	}).promise();
+    return ddb.put({
+        TableName: 'Rides',
+        Item: {
+            RideId: rideId,
+            User: username,
+            UnicornName: unicorn.Name,  // Store only the unicorn name
+            RequestTime: new Date().toISOString(),
+        },
+    }).promise();
 }
 
 function toUrlString(buffer) {
