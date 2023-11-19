@@ -10,21 +10,30 @@ const ddb = new AWS.DynamoDB.DocumentClient();
 
 const fleet = [
 	{
-		Name: '<your name> 1',
-		Color: 'Green',
+		Name: 'YourName 1',
+		Color: 'Golden',
 		Gender: 'Male',
 	},
 	{
-		Name: '<your name> 2',
+		Name: 'YourName 2',
+		Color: 'Mean Green',
+		Gender: 'Male',
+	},
+	{
+		Name: 'YourName 3',
+		Color: 'Royal Blue',
+		Gender: 'Male',
+	},
+	{
+		Name: 'YourName 4',
 		Color: 'White',
 		Gender: 'Male',
 	},
 	{
-		Name: '<your name> 3',
+		Name: 'YourName 5',
 		Color: 'Yellow',
 		Gender: 'Female',
 	},
-	// ... (remaining unicorns)
 ];
 
 
