@@ -506,3 +506,42 @@ h1{
         page-break-after: avoid;
     }
 }
+
+/* Default Theme */
+.theme-default {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+}
+
+/* Dark Theme */
+.theme-dark {
+    --primary-color: #2c3e50;
+    --secondary-color: #e74c3c;
+}
+
+/* Light Theme */
+.theme-light {
+    --primary-color: #ecf0f1;
+    --secondary-color: #f39c12;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.site-header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.form-wrap input,
+.form-wrap input:focus,
+.form-wrap input:valid,
+.form-wrap input[type=submit],
+.form-wrap input[type=submit]:hover {
+    border-bottom-color: var(--secondary-color);
+}
+
+/* Add more styles as needed */
+
