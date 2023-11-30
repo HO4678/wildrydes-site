@@ -134,35 +134,6 @@ function updateWeatherDisplay(weatherCondition, temperature) {
     weatherConditionElement.textContent = weatherCondition;
     temperatureElement.textContent = temperature;
 }
-
-function announceWeather(weatherCondition) {
-    // Integrate with AWS Polly to announce weather conditions
-
-    // Replace 'YOUR_AWS_REGION', 'YOUR_ACCESS_KEY_ID', and 'YOUR_SECRET_ACCESS_KEY' with your AWS Polly credentials
-    AWS.config.update({
-        region: 'us-east-2',
-        accessKeyId: 'AKIAZY334TNPECA2ATHT',
-        secretAccessKey: 'C5ZkhqXK3wAwM0/0dBZHMWiDjhE7c3/HzlMkHF3h'
-    });
-
-    // Replace 'YOUR_POLLY_VOICE_ID' with the desired Polly voice ID
-    const polly = new AWS.Polly({ apiVersion: '2016-06-10', region: 'YOUR_AWS_REGION' });
-    const params = {
-        OutputFormat: 'mp3',
-        Text: `The weather condition is ${weatherCondition} and the temperature is ${temperature} degrees Celsius.`,
-        VoiceId: 'YOUR_POLLY_VOICE_ID',
-    };
-
-    polly.synthesizeSpeech(params, function (err, data) {
-        if (err) {
-            console.error('Error synthesizing speech:', err);
-            return;
-        }
-
-        const audio = new Audio(`data:audio/mp3;base64,${data.AudioStream.toString('base64')}`);
-        audio.play();
-    });
-}
 </script>
 
 </body>
