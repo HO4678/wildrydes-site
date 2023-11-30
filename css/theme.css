@@ -1,0 +1,17 @@
+/* Default Theme */
+.theme-default {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+}
+
+/* Dark Theme */
+.theme-dark {
+    --primary-color: #2c3e50;
+    --secondary-color: #e74c3c;
+}
+
+/* Light Theme */
+.theme-light {
+    --primary-color: #ecf0f1;
+    --secondary-color: #f39c12;
+}
