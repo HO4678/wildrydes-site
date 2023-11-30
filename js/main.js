@@ -12,7 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Weather Information
     const apiKey = 'ab61fa8b06e0e9a5f3d73518cb10a19c';
-    const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=yourCity&appid=' + apiKey;
+    const city = 'Denton';  // Replace with the desired city name
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+
 
     fetch(apiUrl)
         .then(response => response.json())
