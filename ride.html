@@ -18,6 +18,7 @@
           crossorigin=""/>
     <link rel="stylesheet" href="/css/ride.css">
     <link rel="stylesheet" href="/css/message.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.1103.0/aws-sdk.min.js"></script>
 </head>
 
 <body>
@@ -139,7 +140,7 @@ function announceWeather(weatherCondition) {
 
     // Replace 'YOUR_AWS_REGION', 'YOUR_ACCESS_KEY_ID', and 'YOUR_SECRET_ACCESS_KEY' with your AWS Polly credentials
     AWS.config.update({
-        region: 'YOUR_AWS_REGION',
+        region: 'us-east-2',
         accessKeyId: 'YOUR_ACCESS_KEY_ID',
         secretAccessKey: 'YOUR_SECRET_ACCESS_KEY'
     });
@@ -163,7 +164,6 @@ function announceWeather(weatherCondition) {
     });
 }
 </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.1103.0/aws-sdk.min.js"></script>
 
 </body>
 
