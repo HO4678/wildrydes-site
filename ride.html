@@ -104,6 +104,43 @@
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
             integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
             crossorigin=""></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Weather Information
+    const apiKey = 'ab61fa8b06e0e9a5f3d73518cb10a19c';
+    const city = 'Denton';  // Replace with the desired city name
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            const weatherCondition = data.weather[0].description;
+            const temperature = (data.main.temp - 273.15).toFixed(2);
+
+            updateWeatherDisplay(weatherCondition, temperature);
+            announceWeather(weatherCondition);
+        })
+        .catch(error => {
+            console.error('Error fetching weather data:', error);
+            // Handle error display or logging here
+        });
+});
+
+function updateWeatherDisplay(weatherCondition, temperature) {
+    const weatherConditionElement = document.getElementById('weather-condition');
+    const temperatureElement = document.getElementById('temperature');
+
+    weatherConditionElement.textContent = weatherCondition;
+    temperatureElement.textContent = temperature;
+}
+
+function announceWeather(weatherCondition) {
+    // Integrate with AWS Polly to announce weather conditions
+    // You need to implement this function with AWS Polly integration
+    // Similar to the one mentioned in the previous example
+}
+</script>
+
 </body>
 
 </html>
